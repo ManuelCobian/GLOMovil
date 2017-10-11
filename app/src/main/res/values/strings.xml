@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Splash Screen</string>
+    <string name="action_settings">Volver a comenzar</string>
+
+    <string name="next">Siguente</string>
+    <string name="skip">Salir</string>
+    <string name="start">Ir a</string>
+    <string name="no">Nosotros</string>
+
+    <string name="vi">Vision</string>
+
+    <string name="se">Servicios</string>
+
+
+    <string name="nosotros">GLO Logistics, S.A. de C.V. nace ante los requerimientos por abastecer la red global de suministros para un
+mercado aficionado en constante crecimiento, mejorando e innovando los procesos que conllevan las opera-
+ciones de logística y comercio internacional.</string>
+
+
+    <string name="vision">Convertirnos en la opción más confiable y segura en
+materia logística y de comercio exterior. Ganando una
+posición líder a nivel nacional e internacional.</string>
+
+
+</resources>
