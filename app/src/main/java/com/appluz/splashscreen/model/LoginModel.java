@@ -33,7 +33,7 @@ public class LoginModel {
 
    public boolean Login(final String name, final String pass) {
 
-        if (name != "" && pass != "") {
+
 
             request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
                 @Override
@@ -41,6 +41,7 @@ public class LoginModel {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
                         if (jsonObject.names().get(0).equals("user")) {
+                            //guardar shardeprefereces
                             validar = true;
                         } else {
 
@@ -70,7 +71,7 @@ public class LoginModel {
 
             requestQueue.add(request);
 
-        }
+
 
         return validar;
     }
