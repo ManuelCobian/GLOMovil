@@ -12,16 +12,32 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.appluz.splashscreen.R;
 import com.appluz.splashscreen.StartActivity;
 import com.appluz.splashscreen.controller.StartApp;
 import com.appluz.splashscreen.model.LoginModel;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
     Button btn;
     EditText password,email;
     CheckBox recordar;
     LoginModel loginModel;
+    private RequestQueue requestQueue;
+
+    private StringRequest request;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, StartActivity.class));
         }
 
-        loginModel=new LoginModel();
+
+
+        requestQueue= Volley.newRequestQueue(this);
+        loginModel=new LoginModel(requestQueue,request);
+
 
         email=(EditText)findViewById(R.id.editText);
         password=(EditText)findViewById(R.id.editText);
@@ -50,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                    if (loginModel.logeo(correo,pass)){
+                    if (loginModel.Login(correo,pass)){
 
                         Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_LONG).show();
                     }
@@ -70,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
 
 }
